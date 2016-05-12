@@ -23,10 +23,17 @@ python:
  - pypy
  - pypy3
 
+env:
+  - TBUVERSION=0.11.2 TWEEPYVERSION=0.3.5
+  - TBUVERSION=0.11.2 TWEEPYVERSION=0.3.4
+  - TBUVERSION=0.10.4 TWEEPYVERSION=0.3.4
+  - TBUVERSION=0.10.4 TWEEPYVERSION=0.3.5
+
 before_install:
  - pip install setuptools>=17.1 "pbr>=0.11,<1.0" mock
 
 install:
+ - pip install twitter_bot_utils==$TBUVERSION tweepy==$TWEEPYVERSION
  - python setup.py install
 
 script:
