@@ -24,7 +24,6 @@ python:
  - pypy3
 
 env:
-  - TBUVERSION=0.10.4 TWEEPYVERSION=3.4.0
   - TBUVERSION=0.10.4 TWEEPYVERSION=3.5.0
   - TBUVERSION=0.11.2 TWEEPYVERSION=3.5.0
   - TBUVERSION=0.11.2 TWEEPYVERSION=3.4.0
@@ -41,17 +40,11 @@ script:
 
 matrix:
   exclude:
-    - env: TBUVERSION=0.10.4 TWEEPYVERSION=3.4.0
-      python: pypy3
-
     - env: TBUVERSION=0.10.4 TWEEPYVERSION=3.5.0
       python: pypy3
 
     - env: TBUVERSION=0.11.2 TWEEPYVERSION=3.4.0
       python: pypy3
-
-    - env: TBUVERSION=0.10.4 TWEEPYVERSION=3.4.0
-      python: pypy
 
     - env: TBUVERSION=0.14.5 TWEEPYVERSION=3.5.0
       python: pypy
@@ -59,9 +52,5 @@ matrix:
     - env: TBUVERSION=0.11.2 TWEEPYVERSION=3.4.0
       python: pypy
 
-    - env: TBUVERSION=0.10.4 TWEEPYVERSION=3.4.0
-      python: 3.4
-
     - env: TBUVERSION=0.10.4 TWEEPYVERSION=3.5.0
       python: 3.4
-
