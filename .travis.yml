@@ -24,15 +24,14 @@ python:
  - pypy3
 
 env:
-  - TBUVERSION=0.10.4 TWEEPYVERSION=3.5.0
-  - TBUVERSION=0.11.2 TWEEPYVERSION=3.5.0
-  - TBUVERSION=0.11.2 TWEEPYVERSION=3.4.0
+  - TWEEPYVERSION=3.5.0
+  - TWEEPYVERSION=3.4.0
 
 before_install:
  - pip install setuptools>=17.1 "pbr>=0.11,<1.0" mock
 
 install:
- - pip install twitter_bot_utils==$TBUVERSION tweepy==$TWEEPYVERSION
+ - pip install tweepy==$TWEEPYVERSION
  - python setup.py install
 
 script:
@@ -40,17 +39,11 @@ script:
 
 matrix:
   exclude:
-    - env: TBUVERSION=0.10.4 TWEEPYVERSION=3.5.0
+    - env: TWEEPYVERSION=3.4.0
       python: pypy3
 
-    - env: TBUVERSION=0.11.2 TWEEPYVERSION=3.4.0
-      python: pypy3
-
-    - env: TBUVERSION=0.14.5 TWEEPYVERSION=3.5.0
+    - env: TWEEPYVERSION=3.4.0
       python: pypy
 
-    - env: TBUVERSION=0.11.2 TWEEPYVERSION=3.4.0
-      python: pypy
-
-    - env: TBUVERSION=0.10.4 TWEEPYVERSION=3.5.0
+    - env: TWEEPYVERSION=3.4.0
       python: 3.4
